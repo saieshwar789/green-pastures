@@ -255,8 +255,8 @@ export default function MilkTracker() {
               <tbody>
                 {records.map((rec) => (
                   <tr key={rec.id}>
-                    <td>{rec.date}</td>
-                    <td>
+                    <td data-label="Date">{rec.date}</td>
+                    <td data-label="Cattle / Source">
                       {rec.cattle_id ? (
                         <span className="badge badge-milking" style={{ textTransform: 'none' }}>
                           Tag: {rec.cattle_tag}
@@ -267,13 +267,13 @@ export default function MilkTracker() {
                         </span>
                       )}
                     </td>
-                    <td>{rec.session}</td>
-                    <td><strong>{rec.quantity.toFixed(1)} L</strong></td>
-                    <td>{rec.fat_percentage ? `${rec.fat_percentage.toFixed(1)}%` : '-'}</td>
-                    <td>{rec.snf_percentage ? `${rec.snf_percentage.toFixed(1)}%` : '-'}</td>
-                    <td>{rec.price_per_liter ? `₹${rec.price_per_liter.toFixed(2)}` : '-'}</td>
-                    <td><strong>₹{rec.total_price.toFixed(2)}</strong></td>
-                    <td>
+                    <td data-label="Session">{rec.session}</td>
+                    <td data-label="Quantity"><strong>{rec.quantity.toFixed(1)} L</strong></td>
+                    <td data-label="Fat %">{rec.fat_percentage ? `${rec.fat_percentage.toFixed(1)}%` : '-'}</td>
+                    <td data-label="SNF %">{rec.snf_percentage ? `${rec.snf_percentage.toFixed(1)}%` : '-'}</td>
+                    <td data-label="Price / L">{rec.price_per_liter ? `₹${rec.price_per_liter.toFixed(2)}` : '-'}</td>
+                    <td data-label="Gross Total"><strong>₹{rec.total_price.toFixed(2)}</strong></td>
+                    <td data-label="Actions">
                       <button 
                         className="delete-icon-btn" 
                         onClick={() => handleDelete(rec.id)}

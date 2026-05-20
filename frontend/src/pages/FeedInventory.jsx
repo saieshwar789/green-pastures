@@ -218,10 +218,10 @@ export default function FeedInventory() {
               <tbody>
                 {logs.map((log) => (
                   <tr key={log.id}>
-                    <td>{log.date}</td>
-                    <td><strong>{log.feed_name}</strong></td>
-                    <td><span className="text-amber" style={{ fontWeight: 600 }}>{log.quantity_used_kg.toFixed(1)} kg</span></td>
-                    <td><span className="badge badge-milking">{log.group_fed}</span></td>
+                    <td data-label="Feeding Date">{log.date}</td>
+                    <td data-label="Feed Name"><strong>{log.feed_name}</strong></td>
+                    <td data-label="Quantity Consumed"><span className="text-amber" style={{ fontWeight: 600 }}>{log.quantity_used_kg.toFixed(1)} kg</span></td>
+                    <td data-label="Cattle Group Fed"><span className="badge badge-milking">{log.group_fed}</span></td>
                   </tr>
                 ))}
               </tbody>

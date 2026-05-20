@@ -284,20 +284,20 @@ export default function BreedingManager() {
                   <th style={{ width: '80px' }}>Actions</th>
                 </tr>
               </thead>
-              <tbody>
+               <tbody>
                 {records.map((rec) => (
                   <tr key={rec.id}>
-                    <td>{rec.insemination_date}</td>
-                    <td><span className="badge badge-milking">Tag: {rec.cattle_tag}</span></td>
-                    <td>{rec.sire_id || '-'}</td>
-                    <td>{rec.breeding_method}</td>
-                    <td>
+                    <td data-label="Insemination Date">{rec.insemination_date}</td>
+                    <td data-label="Cattle Tag"><span className="badge badge-milking">Tag: {rec.cattle_tag}</span></td>
+                    <td data-label="Sire ID">{rec.sire_id || '-'}</td>
+                    <td data-label="Method">{rec.breeding_method}</td>
+                    <td data-label="Preg. Status">
                       <span className={`badge badge-${rec.pregnancy_status.toLowerCase()}`}>
                         {rec.pregnancy_status}
                       </span>
                     </td>
-                    <td>{rec.expected_calving_date || '-'}</td>
-                    <td>
+                    <td data-label="Calving Expected">{rec.expected_calving_date || '-'}</td>
+                    <td data-label="Calving Actual">
                       {rec.actual_calving_date ? (
                         <span className="text-emerald" style={{ fontWeight: 600 }}>{rec.actual_calving_date}</span>
                       ) : rec.pregnancy_status === 'Positive' ? (
@@ -306,10 +306,10 @@ export default function BreedingManager() {
                         '-'
                       )}
                     </td>
-                    <td style={{ fontSize: '0.8rem', color: 'var(--text-secondary)', maxWidth: '200px', textOverflow: 'ellipsis', overflow: 'hidden', whiteSpace: 'nowrap' }}>
+                    <td data-label="Notes" style={{ fontSize: '0.8rem', color: 'var(--text-secondary)', maxWidth: '200px', textOverflow: 'ellipsis', overflow: 'hidden', whiteSpace: 'nowrap' }}>
                       {rec.notes || '-'}
                     </td>
-                    <td>
+                    <td data-label="Actions">
                       <button className="btn-link-danger" onClick={() => handleDelete(rec.id)}>
                         Delete
                       </button>

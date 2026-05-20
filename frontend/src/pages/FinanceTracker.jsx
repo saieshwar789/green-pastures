@@ -169,22 +169,22 @@ export default function FinanceTracker() {
               <tbody>
                 {transactions.map((t) => (
                   <tr key={t.id}>
-                    <td>{t.date}</td>
-                    <td>
+                    <td data-label="Date">{t.date}</td>
+                    <td data-label="Type">
                       <span className={`badge ${t.type === 'Income' ? 'badge-milking' : 'badge-sick'}`}>
                         {t.type}
                       </span>
                     </td>
-                    <td><strong>{t.category}</strong></td>
-                    <td style={{ color: 'var(--text-secondary)', fontSize: '0.9rem', maxWidth: '350px' }}>
+                    <td data-label="Category"><strong>{t.category}</strong></td>
+                    <td data-label="Description" style={{ color: 'var(--text-secondary)', fontSize: '0.9rem', maxWidth: '350px' }}>
                       {t.description || '-'}
                     </td>
-                    <td>
+                    <td data-label="Amount">
                       <span className={t.type === 'Income' ? 'text-emerald' : 'text-red'} style={{ fontWeight: 700 }}>
                         {t.type === 'Income' ? '+' : '-'}₹{t.amount.toFixed(2)}
                       </span>
                     </td>
-                    <td>
+                    <td data-label="Actions">
                       <button 
                         className="btn-link-danger" 
                         onClick={() => handleDelete(t.id)}
