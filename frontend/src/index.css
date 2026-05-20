@@ -72,8 +72,14 @@
   padding: 0;
 }
 
-html {
+html, body {
   overflow-x: hidden;
+  width: 100%;
+  max-width: 100%;
+}
+
+html {
+  position: relative;
 }
 
 body {
@@ -81,8 +87,6 @@ body {
   background-color: var(--bg-app);
   color: var(--text-primary);
   min-height: 100vh;
-  overflow-x: hidden;
-  max-width: 100vw;
   line-height: 1.5;
   -webkit-font-smoothing: antialiased;
   -webkit-text-size-adjust: 100%;
@@ -109,8 +113,10 @@ body {
   display: flex;
   min-height: 100vh;
   background-color: #ffffff;
-  max-width: 100vw;
+  width: 100%;
+  max-width: 100%;
   overflow-x: hidden;
+  position: relative;
 }
 
 .main-content {
@@ -119,6 +125,10 @@ body {
   margin-left: 280px;
   max-width: 1600px;
   background-color: #ffffff;
+  min-width: 0;
+  overflow-x: hidden;
+  word-wrap: break-word;
+  overflow-wrap: break-word;
 }
 
 @media (max-width: 1024px) {
@@ -126,6 +136,8 @@ body {
     margin-left: 0;
     padding: 1.5rem;
     padding-top: 5rem;
+    width: 100%;
+    max-width: 100%;
   }
 }
 
@@ -137,6 +149,8 @@ body {
   padding: 1.75rem;
   box-shadow: none; /* Flat surface design */
   transition: border-color var(--transition-fast), box-shadow var(--transition-fast);
+  overflow-x: hidden;
+  max-width: 100%;
 }
 
 .glass-card-interactive {
