@@ -352,6 +352,7 @@ h1, h2, h3, h4, h5, h6 {
   z-index: 9999;
   padding: 1.5rem;
   overflow-y: auto;
+  -webkit-overflow-scrolling: touch;
 }
 
 .modal-container {
@@ -442,12 +443,33 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 @media (max-width: 768px) {
-  .modal-container .form-grid {
-    grid-template-columns: 1fr;
+  .modal-backdrop {
+    padding: 0.75rem;
+    align-items: flex-start;
+    padding-top: 2rem;
   }
   .modal-container {
     padding: 1.25rem;
     max-width: 100%;
+    max-height: calc(100vh - 3rem);
+    border-radius: 12px;
+  }
+  .modal-container .form-grid {
+    grid-template-columns: 1fr;
+  }
+  /* Reset any inline gridColumn: span 2 on mobile */
+  .modal-container .form-grid .form-group {
+    grid-column: span 1 !important;
+  }
+  .modal-container .form-actions {
+    flex-direction: column;
+  }
+  .modal-container .form-actions .btn {
+    width: 100%;
+    justify-content: center;
+  }
+  .modal-header h3 {
+    font-size: 1rem;
   }
   .page-header {
     flex-direction: column;
