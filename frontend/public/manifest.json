@@ -1,0 +1,16 @@
+{
+  "short_name": "GreenPastures",
+  "name": "GreenPastures Dairy Management",
+  "icons": [
+    {
+      "src": "favicon.svg",
+      "type": "image/svg+xml",
+      "sizes": "any"
+    }
+  ],
+  "start_url": ".",
+  "background_color": "#ffffff",
+  "theme_color": "#1e8e3e",
+  "display": "standalone",
+  "orientation": "portrait"
+}
