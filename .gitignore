@@ -1,0 +1,41 @@
+# Dependencies
+node_modules/
+frontend/node_modules/
+
+# Production builds
+dist/
+frontend/dist/
+dist-ssr/
+
+# Python cache & databases
+__pycache__/
+**/__pycache__/
+*.pyc
+backend/instance/
+instance/
+*.db
+
+# Local envs / properties
+*.local
+.env
+frontend/android/local.properties
+
+# Android Gradle build files
+frontend/android/.gradle/
+frontend/android/build/
+frontend/android/app/build/
+
+# Logs
+logs
+*.log
+npm-debug.log*
+
+# Editor files
+.vscode/
+.idea/
+.DS_Store
+*.suo
+*.ntvs*
+*.njsproj
+*.sln
+*.sw?
